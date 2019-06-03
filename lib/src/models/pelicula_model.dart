@@ -17,6 +17,9 @@ class Peliculas {
 
 
 class Pelicula {
+
+  String uniqueId;
+
   int voteCount;
   int id;
   bool video;
@@ -64,6 +67,21 @@ class Pelicula {
       adult               = json['adult'];
       overview            = json['overview'];
       releaseDate         = json['release_date'];
+  }
+
+  getPosterimg(){
+    if(posterPath == null){
+      return 'https://www.mayline.com/products/images/product/noimage.jpg';
+    }else{
+      return 'https://image.tmdb.org/t/p/w500/$posterPath';
+    }
+  }
+  getBackgroundImg(){
+    if(posterPath == null){
+      return 'https://www.mayline.com/products/images/product/noimage.jpg';
+    }else{
+      return 'https://image.tmdb.org/t/p/w500/$backdropPath';
+    }
   }
 }
 
